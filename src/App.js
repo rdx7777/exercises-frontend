@@ -36,6 +36,10 @@ class App extends Component {
     
     handleChangeOnFibonacciCheck(event) {
         let number = event.target.value;
+        if (!Number.isInteger(number)) {
+            alert("Provided value is not a number.");
+            number = 7; // result -> NO
+        }
         if (number > 1000000000 || number < 0) {
             alert("Provided number for check is too big.");
             number = 7; // result -> NO
@@ -54,8 +58,12 @@ class App extends Component {
     
     handleChangeOnGetFibonacciIterative(event) {
         let orderIterative = event.target.value;
+        if (!Number.isInteger(orderIterative)) {
+            alert("Provided value is not a number. Number in order set to 0.");
+            orderIterative = 0;
+        }
         if (orderIterative > 50 || orderIterative < 0) {
-            alert("Provided number is out of supported range.");
+            alert("Provided number is out of supported range. Number in order set to 0.");
             orderIterative = 0;
         }
         this.setState({orderIterative: orderIterative});
@@ -71,8 +79,12 @@ class App extends Component {
     
     handleChangeOnGetFibonacciRecursive(event) {
         let orderRecursive = event.target.value;
+        if (!Number.isInteger(orderRecursive)) {
+            alert("Provided value is not a number. Number in order set to 0.");
+            orderRecursive = 0;
+        }
         if (orderRecursive > 40 || orderRecursive < 0) {
-            alert("Provided number is out of supported range.");
+            alert("Provided number is out of supported range. Number in order set to 0.");
             orderRecursive = 0;
         }
         this.setState({orderRecursive: orderRecursive});
@@ -88,9 +100,13 @@ class App extends Component {
     
     handleChangeOnGetSieve(event) {
         let max = event.target.value;
+        if (!Number.isInteger(max)) {
+            alert("Provided value is not a number. Max. number set to 10.");
+            max = 10;
+        }
         if (max > 10000 || max < 0 ) {
-            alert("Provided number is out of supported range.");
-            max = 0;
+            alert("Provided number is out of supported range. Max. number set to 10.");
+            max = 10;
         }
         this.setState({max: max});
     }
@@ -105,6 +121,10 @@ class App extends Component {
     
     handleChangeOnGetArrayMap(event) {
         let size = event.target.value;
+        if (!Number.isInteger(size)) {
+            alert("Provided value is not a number. Max. size set to 10.");
+            size = 10;
+        }
         if (size > 1000 || size < 0) {
             alert("Provided number is out of supported range. Max. size set to 10.");
             size = 10;
