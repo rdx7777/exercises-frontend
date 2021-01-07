@@ -163,7 +163,11 @@ class App extends Component {
             <div>
                 <Container fluid name="Header" className="mb-2 justify-content-end">
                     <Label style={{margin: '30px 0 0 0'}}>
-                        <h3>Java exercises</h3>
+                        <a target="_blank" rel="noreferrer" href="https://github.com/rdx7777/exercises-backend">
+                            <h1>
+                                Java exercises
+                            </h1>
+                        </a>
                     </Label>
                 </Container>
                 <Container fluid name="Fibonacci Check" className="mb-4">
