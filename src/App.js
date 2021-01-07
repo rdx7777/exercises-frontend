@@ -35,7 +35,11 @@ class App extends Component {
     }
     
     handleChangeOnFibonacciCheck(event) {
-        const number = event.target.value;
+        let number = event.target.value;
+        if (number > 1000000000 || number < 0) {
+            alert("Provided number for check is too big.");
+            number = 7; // result -> NO
+        }
         // unnecessary value check (server-side app generates exception -> no boolean result
         this.setState({number: number});
     }
@@ -50,8 +54,9 @@ class App extends Component {
     
     handleChangeOnGetFibonacciIterative(event) {
         let orderIterative = event.target.value;
-        if (orderIterative > 50) {
-            orderIterative = 0
+        if (orderIterative > 50 || orderIterative < 0) {
+            alert("Provided number is out of supported range.");
+            orderIterative = 0;
         }
         this.setState({orderIterative: orderIterative});
     }
@@ -66,8 +71,9 @@ class App extends Component {
     
     handleChangeOnGetFibonacciRecursive(event) {
         let orderRecursive = event.target.value;
-        if (orderRecursive > 40) {
-            orderRecursive = 0
+        if (orderRecursive > 40 || orderRecursive < 0) {
+            alert("Provided number is out of supported range.");
+            orderRecursive = 0;
         }
         this.setState({orderRecursive: orderRecursive});
     }
@@ -82,8 +88,9 @@ class App extends Component {
     
     handleChangeOnGetSieve(event) {
         let max = event.target.value;
-        if (max > 10000) {
-            max = 0
+        if (max > 10000 || max < 0 ) {
+            alert("Provided number is out of supported range.");
+            max = 0;
         }
         this.setState({max: max});
     }
@@ -98,8 +105,9 @@ class App extends Component {
     
     handleChangeOnGetArrayMap(event) {
         let size = event.target.value;
-        if (size > 1000) {
-            size = 0
+        if (size > 1000 || size < 0) {
+            alert("Provided number is out of supported range. Max. size set to 10.");
+            size = 10;
         }
         this.setState({size: size});
     }
