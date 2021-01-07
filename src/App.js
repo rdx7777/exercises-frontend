@@ -36,7 +36,7 @@ class App extends Component {
     
     handleChangeOnFibonacciCheck(event) {
         let number = event.target.value;
-        if (!Number.isInteger(number)) {
+        if (isNaN(number)) {
             alert("Provided value is not a number.");
             number = 7; // result -> NO
         }
@@ -58,7 +58,7 @@ class App extends Component {
     
     handleChangeOnGetFibonacciIterative(event) {
         let orderIterative = event.target.value;
-        if (!Number.isInteger(orderIterative)) {
+        if (isNaN(orderIterative)) {
             alert("Provided value is not a number. Number in order set to 0.");
             orderIterative = 0;
         }
@@ -79,7 +79,7 @@ class App extends Component {
     
     handleChangeOnGetFibonacciRecursive(event) {
         let orderRecursive = event.target.value;
-        if (!Number.isInteger(orderRecursive)) {
+        if (isNaN(orderRecursive)) {
             alert("Provided value is not a number. Number in order set to 0.");
             orderRecursive = 0;
         }
@@ -100,7 +100,7 @@ class App extends Component {
     
     handleChangeOnGetSieve(event) {
         let max = event.target.value;
-        if (!Number.isInteger(max)) {
+        if (isNaN(max)) {
             alert("Provided value is not a number. Max. number set to 10.");
             max = 10;
         }
@@ -121,7 +121,7 @@ class App extends Component {
     
     handleChangeOnGetArrayMap(event) {
         let size = event.target.value;
-        if (!Number.isInteger(size)) {
+        if (isNaN(size)) {
             alert("Provided value is not a number. Max. size set to 10.");
             size = 10;
         }
